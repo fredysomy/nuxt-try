@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Nuxtlayout>
+    <NuxtLayout>
       <router-view/>
-    </Nuxtlayout>
+    </NuxtLayout>
   </div>
 </template>

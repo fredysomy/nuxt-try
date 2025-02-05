@@ -5,3 +5,11 @@
         <nuxt-link to="/about">About Page</nuxt-link>
     </div>
 </template>
+
+<script setup lang="ts">
+definePageMeta({
+    title: 'Home Page',
+    description: 'This is the home page',
+   layout: 'default'
+});
+</script>
