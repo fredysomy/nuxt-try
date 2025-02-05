@@ -36,17 +36,28 @@ const email = ref('');
 const password = ref('');
 const router = useRouter();
 
-const handleLogin = async() => {
-    const data = await axios.post('https://dummyjson.com/auth/login', {
-        username: email.value,
-        password: password.value
-    });
+const handleLogin = async () => {
+    try {
+        const response = await fetch('http://localhost:3001/api/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({
+                email: email.value,
+                password: password.value
+            })
+        });
 
-    if(data.data.accessToken) {
-        localStorage.setItem('token', data.data.accessToken);
-        router.push('/secret');
+        const data = await response.json();
+
+        if(data.message === "Login successful") {
+            router.push('/secret');
+        }
+    } catch (error) {
+        console.error('Login error:', error);
     }
-
 };
 
 </script>

@@ -6,3 +6,15 @@
         <nuxt-link to="/about">About Page</nuxt-link>
     </div>
 </template>
+
+
+
+<script setup lang="ts">
+definePageMeta({
+    title: 'Secret Page',
+    description: 'This is the secret page',
+    middleware: 'auth-middle'
+});
+
+
+</script>
