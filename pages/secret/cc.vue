@@ -17,7 +17,7 @@ const { data, refresh } = await useAsyncData(
     <h1>Blog Posts</h1>
     <ul>
       <li v-for="post in data" :key="post.id">
-        <NuxtLink :to="`/blog/${post.id}`">{{ post.title }}</NuxtLink>
+        <NuxtLink :to="`/secret/${post.id}`">{{ post.title }}</NuxtLink>
       </li>
     </ul>
   </div>
